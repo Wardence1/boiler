@@ -1,6 +1,6 @@
 /*
  * Prints boilerplate code to a file.
- * Supported languages: C
+ * Supported languages: C, Go
  * Created by Jackson Kidwell, 2025
 */
 
@@ -9,13 +9,18 @@
 
 // error messages
 char usage[] = "Usage: boiler <flags> <file>";
-char flags[] = "Valid Flags: -c";
+char flags[] = "Valid Flags: -c -go";
 
 
 char cBoil[] =
     "#include <stdio.h>\n\n"
     "int main() {\n\n"
     "\treturn 0;\n"
+    "}\n";
+
+char goBoil[] =
+    "package main\n\n"
+    "func main() {\n\n"
     "}\n";
 
 int main(int argc, char* argv[]) {
@@ -45,6 +50,9 @@ int main(int argc, char* argv[]) {
     // Check for valid flag
     if (strcmp(argv[1], "-c") == 0) {
         fprintf(fp, "%s", cBoil);
+    }
+    if (strcmp(argv[1], "-go") == 0) {
+        fprintf(fp, "%s", goBoil);
     }
     else {
         fprintf(stderr, "%s is not a valid flag.\n%s\n", argv[1], flags);
