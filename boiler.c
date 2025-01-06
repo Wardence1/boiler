@@ -43,7 +43,7 @@ int main(int argc, char* argv[]) {
     FILE* fp = fopen(argv[2], "w");
     // Make sure file exists
     if (fp == NULL) {
-        fprintf(stderr, "Error opening file %s\n", argv[1]);
+        fprintf(stderr, "Error opening file %s\n", argv[2]);
         return 1;
     }
 
