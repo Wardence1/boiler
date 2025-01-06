@@ -51,7 +51,7 @@ int main(int argc, char* argv[]) {
     if (strcmp(argv[1], "-c") == 0) {
         fprintf(fp, "%s", cBoil);
     }
-    if (strcmp(argv[1], "-go") == 0) {
+    else if (strcmp(argv[1], "-go") == 0) {
         fprintf(fp, "%s", goBoil);
     }
     else {
